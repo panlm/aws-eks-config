@@ -24,6 +24,7 @@ spec:
       version: 1.4.4
   values:
     clusterName: ekscluster3
+    namespace: kube-system
     serviceAccount:
       # Specifies whether a service account should be created
       create: false

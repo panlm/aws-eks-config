@@ -13,7 +13,7 @@ metadata:
 spec:
   releaseName: aws-load-balancer-controller
   chart:
-    repository: https://aws.github.io/eks-charts/eks/
+    repository: https://aws.github.io/eks-charts/
     name: aws-load-balancer-controller
     # version: 11.1.5
   values:

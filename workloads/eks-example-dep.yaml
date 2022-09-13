@@ -10,7 +10,7 @@ metadata:
     # Container Image Automated Updates
     flux.weave.works/automated: "true"
     # do not apply this manifest on the cluster
-    #flux.weave.works/ignore: "true"
+    flux.weave.works/ignore: "true"
 spec:
   replicas: 1
   selector:

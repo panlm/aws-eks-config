@@ -5,6 +5,11 @@ metadata:
   namespace: eks-example
   labels:
     app: eks-example
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    flux.weave.works/ignore: "true"
 spec:
   type: LoadBalancer
   ports:

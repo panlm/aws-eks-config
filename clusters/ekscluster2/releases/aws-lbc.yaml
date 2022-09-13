@@ -24,17 +24,3 @@ spec:
       create: false
       name: aws-load-balancer-controller
 
-    # image:
-    #   registry: public.ecr.aws
-    #   repository: bitnami/nginx
-    #   tag: 1.21.6
-    # service:
-    #   type: LoadBalancer
-    #   port: 80
-    #   nodePorts:
-    #     http: ""
-    #   externalTrafficPolicy: Cluster
-    # ingress:
-    #   enabled: false
-    # metrics:
-    #   enabled: false

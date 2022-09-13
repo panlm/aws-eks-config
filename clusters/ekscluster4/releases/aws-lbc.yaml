@@ -1,0 +1,32 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: ww-gitops
+  namespace: kube-system
+spec:
+  interval: 1m0s
+  url: https://aws.github.io/eks-charts
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: aws-load-balancer-controller
+  namespace: kube-system
+spec:
+  chart:
+    spec:
+      chart: aws-load-balancer-controller
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ww-gitops
+      version: 1.4.4
+  values:
+    clusterName: ekscluster4
+    serviceAccount:
+      # Specifies whether a service account should be created
+      create: false
+      name: aws-load-balancer-controller
+  interval: 1m0s
+

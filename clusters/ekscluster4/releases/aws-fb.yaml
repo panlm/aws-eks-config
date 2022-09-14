@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: aws-for-fluent-bit
+  namespace: kube-system
+spec:
+  chart:
+    spec:
+      chart: aws-for-fluent-bit
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ww-gitops
+  interval: 1m0s
+

@@ -6,6 +6,7 @@ metadata:
   namespace: nginx
   annotations:
     flux.weave.works/automated: "true"
+    flux.weave.works/ignore: "true"
     flux.weave.works/tag.nginx: semver:~1.16
     flux.weave.works/locked: 'true'
     flux.weave.works/locked_msg: '"Halt updates for now"'

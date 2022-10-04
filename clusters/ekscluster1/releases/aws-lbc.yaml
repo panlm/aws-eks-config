@@ -14,7 +14,7 @@ spec:
         name: ww-gitops
       version: 1.4.4
   values:
-    clusterName: ekscluster2
+    clusterName: ekscluster1
     serviceAccount:
       # Specifies whether a service account should be created
       create: false

@@ -4,22 +4,16 @@ kind: HelmRelease
 metadata:
   name: mywebserver
   namespace: nginx
-  annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/ignore: "true"
-    flux.weave.works/tag.nginx: semver:~1.16
-    flux.weave.works/locked: 'true'
-    flux.weave.works/locked_msg: '"Halt updates for now"'
-    flux.weave.works/locked_user: User Name <user@example.com>
 spec:
   releaseName: mywebserver
   chart:
-    chart: nginx
-    reconcileStrategy: ChartVersion
-    sourceRef:
-      kind: HelmRepository
-      name: nginx-gitops
-    version: 11.1.5
+    spec:
+      chart: nginx
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: nginx-gitops
+      version: 11.1.5
   values:
     usePassword: true
     image:
@@ -36,3 +30,5 @@ spec:
       enabled: false
     metrics:
       enabled: false
+  interval: 1m0s
+

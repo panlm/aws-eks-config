@@ -4,21 +4,20 @@ kind: HelmRelease
 metadata:
   name: aws-load-balancer-controller
   namespace: kube-system
-  annotations:
-    flux.weave.works/automated: "true"
-    # flux.weave.works/ignore: "true"
-    flux.weave.works/locked: 'true'
-    flux.weave.works/locked_msg: '"Halt updates for now"'
-    flux.weave.works/locked_user: User Name <user@example.com>
 spec:
-  releaseName: aws-load-balancer-controller
   chart:
-    repository: https://aws.github.io/eks-charts/
-    name: aws-load-balancer-controller
-    version: 1.4.4
+    spec:
+      chart: aws-load-balancer-controller
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: ww-gitops
+      version: 1.4.4
   values:
-    clusterName: ekscluster2
+    clusterName: ekscluster1
     serviceAccount:
       # Specifies whether a service account should be created
       create: false
       name: aws-load-balancer-controller
+  interval: 1m0s
+

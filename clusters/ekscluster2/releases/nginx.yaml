@@ -14,8 +14,11 @@ metadata:
 spec:
   releaseName: mywebserver
   chart:
-    repository: https://charts.bitnami.com/bitnami/
-    name: nginx
+    chart: nginx
+    reconcileStrategy: ChartVersion
+    sourceRef:
+      kind: HelmRepository
+      name: nginx-gitops
     version: 11.1.5
   values:
     usePassword: true

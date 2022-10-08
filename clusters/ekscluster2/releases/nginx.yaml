@@ -16,6 +16,7 @@ spec:
       version: 11.1.5
   values:
     usePassword: true
+    replicas: 10
     image:
       registry: public.ecr.aws
       repository: bitnami/nginx

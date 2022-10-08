@@ -7,4 +7,4 @@ metadata:
 data:
   values.yaml: |-
     # Default values for podinfo.
-    replicaCount: 7
+    replicaCount: 3

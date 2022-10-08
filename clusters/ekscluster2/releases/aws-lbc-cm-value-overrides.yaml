@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: aws-lbc-value-overrides
+  namespace: kube-system
+data:
+  values.yaml: |-
+    # Needed value.
+    clusterName: ekscluster2

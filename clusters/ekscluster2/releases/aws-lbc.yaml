@@ -14,10 +14,13 @@ spec:
         name: ww-gitops
       version: 1.4.4
   values:
-    clusterName: ekscluster2
     serviceAccount:
       # Specifies whether a service account should be created
       create: false
       name: aws-load-balancer-controller
   interval: 1m0s
+  valuesFrom:
+  - kind: ConfigMap
+    name: aws-lbc-value-overrides
+    valuesKey: values.yaml # This is the default, but best to be explicit for clarity
 

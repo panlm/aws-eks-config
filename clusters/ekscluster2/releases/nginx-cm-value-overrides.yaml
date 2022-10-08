@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nginx-value-overrides
+  namespace: nginx
+data:
+  values.yaml: |-
+    # Default values for podinfo.
+    replicaCount: 7

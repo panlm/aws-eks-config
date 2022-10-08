@@ -15,8 +15,9 @@ spec:
         name: nginx-gitops
       version: 11.1.5
   values:
+    # parameters explain
+    # https://github.com/bitnami/charts/tree/master/bitnami/nginx
     usePassword: true
-    replicaCount: 10
     image:
       registry: public.ecr.aws
       repository: bitnami/nginx
@@ -32,4 +33,7 @@ spec:
     metrics:
       enabled: false
   interval: 1m0s
-
+  valuesFrom:
+  - kind: ConfigMap
+    name: nginx-value-overrides
+    valuesKey: values.yaml # This is the default, but best to be explicit for clarity

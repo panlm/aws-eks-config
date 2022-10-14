@@ -7,4 +7,4 @@ metadata:
 data:
   values.yaml: |-
     # Needed value.
-    clusterName: ekscluster2
+    clusterName: ekscluster1

@@ -13,10 +13,5 @@ spec:
         kind: HelmRepository
         name: ms-gitops
       version: 3.8.3
-  values:
-    serviceAccount:
-      # Specifies whether a service account should be created
-      create: false
-      name: metrics-server
   interval: 1m0s
 
